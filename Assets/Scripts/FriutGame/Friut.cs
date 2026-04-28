@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Fruit : MonoBehaviour
 {
-    public int fruitType;
+    public int friutType;
 
     public bool hasMerged = false;
 
@@ -11,13 +11,14 @@ public class Fruit : MonoBehaviour
         if (hasMerged)
             return;
         Fruit otherFruit = collision.gameObject.GetComponent<Fruit>();
-        if(otherFruit != null && !otherFruit.hasMerged && otherFruit.fruitType == fruitType )
-        { 
+
+        if(otherFruit != null && !otherFruit.hasMerged && otherFruit.fruitTyp == friutType)
+        {
             hasMerged = true;
             otherFruit.hasMerged = true;
 
-            Vector3 mergePosition = (transform.position + otherFruit.transform.position) / 2f;
-            
+            Vector3 MergePosition = (transform.position + otherFruit.transform.position) / 2f;
+
             Destroy(otherFruit.gameObject);
             Destroy(gameObject);
         }
